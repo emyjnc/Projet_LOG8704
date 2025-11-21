@@ -1,0 +1,44 @@
+using Unity.VisualScripting;
+using UnityEngine;
+
+public class BinTrigger1 : MonoBehaviour
+{
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    public string acceptedTag;
+    
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        TrashItem trash = other.GetComponent<TrashItem>();
+
+        if (trash == null) return;
+
+        if (other.CompareTag(acceptedTag))
+        {
+            Debug.Log("bien joué ! +1");
+            Destroy(other.gameObject);
+            return;
+
+        }
+        else
+        {
+            Debug.Log("NOOO, trompé");
+            trash.ResetItem();
+            return;
+
+        }
+
+    }
+}   
+
