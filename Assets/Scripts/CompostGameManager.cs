@@ -1,16 +1,25 @@
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 
 public class CompostGameManager : MonoBehaviour
 {
+    public static CompostGameManager Instance = null;
     [SerializeField]
     private List<GameObject> spawners = new List<GameObject>();
     [SerializeField]
     private List<GameObject> items = new List<GameObject>();
+    [SerializeField]
+    private TextMeshProUGUI scoreUI = null;
+
+    private int score = 0;
     
     void Start()
     {
+        Instance = this;
+        // scoreUI.text = 0.ToString();
+
         if (!spawners.Any() || !items.Any())
             return;
 
@@ -21,5 +30,11 @@ public class CompostGameManager : MonoBehaviour
             Instantiate(availableObjects[rand], spawner.transform);
             availableObjects.Remove(availableObjects[rand]);
         }
+    }
+
+    public void AddToScore()
+    {
+        score++;
+        scoreUI.text = score.ToString();
     }
 }

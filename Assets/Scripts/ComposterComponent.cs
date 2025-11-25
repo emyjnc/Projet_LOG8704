@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class ComposterComponent : MonoBehaviour
@@ -6,7 +7,7 @@ public class ComposterComponent : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent<ItemComponent>(out var item) && item.type == ItemType.Compostable)
         {
-            // TODO: add point to score
+            CompostGameManager.Instance.AddToScore();
             Destroy(collision.gameObject);
         }
     }
