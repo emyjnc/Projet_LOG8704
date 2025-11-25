@@ -18,7 +18,7 @@ public class CompostGameManager : MonoBehaviour
     void Start()
     {
         Instance = this;
-        // scoreUI.text = 0.ToString();
+        scoreUI.text = "Score: " + score.ToString();
 
         if (!spawners.Any() || !items.Any())
             return;
@@ -35,6 +35,6 @@ public class CompostGameManager : MonoBehaviour
     public void AddToScore()
     {
         score++;
-        scoreUI.text = score.ToString();
+        scoreUI.text = "Score: " + score.ToString();
     }
 }
