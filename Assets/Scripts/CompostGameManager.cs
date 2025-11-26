@@ -14,6 +14,7 @@ public class CompostGameManager : MonoBehaviour
     private TextMeshProUGUI scoreUI = null;
 
     private int score = 0;
+    private int maxScore = 0;
     
     void Start()
     {
@@ -22,6 +23,8 @@ public class CompostGameManager : MonoBehaviour
 
         if (!spawners.Any() || !items.Any())
             return;
+
+        CalculateMaxScore();
 
         List<GameObject> availableObjects = new List<GameObject>(items);
         foreach (GameObject spawner in spawners)
@@ -32,9 +35,26 @@ public class CompostGameManager : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        if (score >= maxScore)
+        {
+            // TODO: mettre le UI de fin de jeu
+        }
+    }
+
     public void AddToScore()
     {
         score++;
         scoreUI.text = "Score: " + score.ToString();
+    }
+
+    private void CalculateMaxScore()
+    {
+        foreach (GameObject item in items)
+        {
+            if (item.GetComponent<ItemComponent>().type == ItemType.Compostable)
+                maxScore++;
+        }
     }
 }
