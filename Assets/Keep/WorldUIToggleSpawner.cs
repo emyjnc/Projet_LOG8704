@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -47,7 +48,21 @@ public class MetaWorldUiToggleSpawner : MonoBehaviour
     {
         // Re-find rig in newly loaded scene
         FindRig();
+
+        // Auto-open the UI when loading the MainMenu scene
+        if (scene.name == "MainMenu")
+        {
+            // Delay one frame to ensure the rig + menu canvas are ready
+            StartCoroutine(OpenUIOnNextFrame());
+        }
     }
+
+    private IEnumerator OpenUIOnNextFrame()
+    {
+        yield return null;     // wait 1 frame so head pose is stable
+        Toggle();              // spawn the menu UI
+    }
+
 
     void OnEnable()
     {
@@ -66,6 +81,8 @@ public class MetaWorldUiToggleSpawner : MonoBehaviour
             toggleAction.action.Disable();
         }
     }
+
+
 
     private void FindRig()
     {

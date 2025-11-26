@@ -56,6 +56,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3456436999308584182}
     m_Modifications:
+    - target: {fileID: 3346543395925809543, guid: a008b3ed288e8544ba5d57aa41152f30, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7012485016600483851, guid: a008b3ed288e8544ba5d57aa41152f30, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -104,11 +108,86 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI Options
       objectReference: {fileID: 0}
+    - target: {fileID: 8193367020314489965, guid: a008b3ed288e8544ba5d57aa41152f30, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234803741434916251, guid: a008b3ed288e8544ba5d57aa41152f30, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234803741434916251, guid: a008b3ed288e8544ba5d57aa41152f30, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2392498951929316818, guid: a008b3ed288e8544ba5d57aa41152f30, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 6219298569271536007}
+    - targetCorrespondingSourceObject: {fileID: 3279190928583131249, guid: a008b3ed288e8544ba5d57aa41152f30, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 1000522681577959516}
+    - targetCorrespondingSourceObject: {fileID: 3346543395925809543, guid: a008b3ed288e8544ba5d57aa41152f30, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 6689563719629441678}
   m_SourcePrefab: {fileID: 100100000, guid: a008b3ed288e8544ba5d57aa41152f30, type: 3}
+--- !u!1 &3561917719803980695 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3346543395925809543, guid: a008b3ed288e8544ba5d57aa41152f30, type: 3}
+  m_PrefabInstance: {fileID: 2242570752450867728}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6689563719629441678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3561917719803980695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93b15b5980995764b8d532958b627e1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptionButton
+  optionIndex: 2
+--- !u!1 &3647125085613077089 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3279190928583131249, guid: a008b3ed288e8544ba5d57aa41152f30, type: 3}
+  m_PrefabInstance: {fileID: 2242570752450867728}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1000522681577959516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3647125085613077089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93b15b5980995764b8d532958b627e1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptionButton
+  optionIndex: 1
+--- !u!1 &4480214292007647170 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2392498951929316818, guid: a008b3ed288e8544ba5d57aa41152f30, type: 3}
+  m_PrefabInstance: {fileID: 2242570752450867728}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6219298569271536007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4480214292007647170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93b15b5980995764b8d532958b627e1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptionButton
+  optionIndex: 0
 --- !u!114 &5856141719438511139 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5645833786193739315, guid: a008b3ed288e8544ba5d57aa41152f30, type: 3}
