@@ -29,8 +29,9 @@ public class BinTrigger1 : MonoBehaviour
             Debug.Log("bien joué ! +1");
             
             GameManager.Instance.AddScore();
+            GameManager.Instance.TrashDisposed();
             other.gameObject.SetActive(false);
-            GameManager.Instance.CheckEnd();
+          
             
             //Destroy(other.gameObject);
             return;

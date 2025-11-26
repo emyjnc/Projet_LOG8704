@@ -20,6 +20,7 @@ public class TrashItem : MonoBehaviour
     {
         initPosition = transform.position;
         initRotation = transform.rotation;
+        GameManager.Instance.RegisterTrash();
 
     }
 

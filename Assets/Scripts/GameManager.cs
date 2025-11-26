@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
 
     private float timer = 0;
     private bool timerRunning = false;
+    public int remainingTrash = 0;
 
     private void Awake()
     {
@@ -28,6 +29,20 @@ public class GameManager : MonoBehaviour
         {
             timer += Time.deltaTime;
             UpdateTimerUI();
+        }
+    }
+
+    public void RegisterTrash()
+    {
+        remainingTrash++;
+    }
+
+    public void TrashDisposed()
+    {
+        remainingTrash--;
+        if(remainingTrash <= 0)
+        {
+            stopTimer();
         }
     }
     public void startTimer()
@@ -49,7 +64,15 @@ public class GameManager : MonoBehaviour
     {
         if (timerText != null)
         {
-            timerText.text = timer.ToString("F2") + "s";
+            if(timerRunning == false)
+            {
+                timerText.text = timerText.text;
+            }
+            else
+            {
+                timerText.text = timer.ToString("F2") + "s";
+
+            }
         }
     }
     public void AddScore()
@@ -72,17 +95,5 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void CheckEnd()
-    {
-        TrashItem[] items = FindObjectsOfType<TrashItem>(true);
-        foreach(var item in items)
-        {
-            if (item.gameObject.activeSelf)
-            {
-                return;
-            }
-        }
-        stopTimer();
-
-    }
+    
 }
