@@ -6,8 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/MainMenu.unity
+    guid: 37ce8b83a84f2404287ff5e63276192d
+  - enabled: 1
+    path: Assets/Scenes/MiniJeu1.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/MiniJeu2.unity
+    guid: 06b1cd454d8b74a4f9d42c30ef337111
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 1e1d6f99b686a4d4bab18b66b5b4cb6d, type: 2}
