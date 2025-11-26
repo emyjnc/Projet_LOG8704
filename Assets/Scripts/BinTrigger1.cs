@@ -30,6 +30,7 @@ public class BinTrigger1 : MonoBehaviour
             
             GameManager.Instance.AddScore();
             other.gameObject.SetActive(false);
+            GameManager.Instance.CheckEnd();
             
             //Destroy(other.gameObject);
             return;
