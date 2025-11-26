@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                timerText.text = timer.ToString("F2") + "s";
+                timerText.text = "Timer : " + timer.ToString("F2") + "s";
 
             }
         }
@@ -91,7 +91,7 @@ public class GameManager : MonoBehaviour
     {
         if (scoreText != null)
         {
-            scoreText.text = score.ToString();
+            scoreText.text =score.ToString();
         }
     }
 

@@ -1,11 +1,14 @@
+using Oculus.Haptics;
 using Unity.VisualScripting;
 using UnityEngine;
+using Oculus.Haptics;
 
 public class BinTrigger1 : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     public string acceptedTag;
+    public HapticSource haptics;
     
     void Start()
     {
@@ -39,6 +42,10 @@ public class BinTrigger1 : MonoBehaviour
         }
         else
         {
+            if(haptics != null)
+            {
+                haptics.Play();
+            }
             Debug.Log("NOOO, trompé");
             GameManager.Instance.RemoveScore();
             trash.ResetItem();
