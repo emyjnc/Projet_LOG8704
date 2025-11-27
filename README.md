@@ -1,7 +1,7 @@
 # Projet LOG8704
 ## Scène à build
 Les scènes sur lesquelles nous avons implémenté et testé les fonctionnalités ajoutés se nomment MainMenu.Unity, Minijeu1.Unity et Minijeu2.Unity  .
-Pour démarrer l'application, il faut lancer (Assets -> Scenes -> MainMenu.Unity)
+Pour démarrer l'application, build (Assets -> Scenes -> MainMenu.Unity)
 
 
 ## Tests
