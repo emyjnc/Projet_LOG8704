@@ -2114,6 +2114,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7255753800435889767, guid: 13b4b37a9baeccb4c994b1cacc29d52d, type: 3}
+      propertyPath: m_text
+      value: Minijeu 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7980369757136242852, guid: 13b4b37a9baeccb4c994b1cacc29d52d, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

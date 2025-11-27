@@ -1,9 +1,10 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-public class MetaWorldUiToggleSpawner : MonoBehaviour
+public class WorldUiToggleSpawner : MonoBehaviour
 {
     [Header("UI Prefab")]
     public GameObject uiPrefab;
@@ -27,7 +28,22 @@ public class MetaWorldUiToggleSpawner : MonoBehaviour
 
     private GameObject _instance;
 
-    
+    public GameObject Instance => _instance;
+
+    public TMP_Text minigameText;
+
+
+    public void SetText(string value)
+    {
+        if (_instance == null)
+        {
+            Debug.LogWarning("UI instance not spawned yet.");
+            return;
+        }
+
+        minigameText.text = value;
+    }
+
 
     void Awake()
     {
@@ -37,7 +53,9 @@ public class MetaWorldUiToggleSpawner : MonoBehaviour
 
         // Initial lookup for first scene
         FindRig();
+
     }
+
 
     void OnDestroy()
     {
@@ -156,6 +174,13 @@ public class MetaWorldUiToggleSpawner : MonoBehaviour
         pos.y += heightOffset;
 
         _instance = Instantiate(uiPrefab, pos, Quaternion.identity);
+
+        Transform t = _instance.transform.Find("UI Minigame/CanvasRoot/UIBackplate/Text (TMP)");
+
+        if (t != null)
+            minigameText = t.GetComponent<TMP_Text>();
+        else
+            Debug.LogError("Could not find Text (TMP) inside UI(Clone) - check the path!");
 
         if (faceUser) AlignToUser(head, _instance.transform);
     }

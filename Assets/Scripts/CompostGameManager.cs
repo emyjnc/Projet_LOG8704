@@ -13,12 +13,17 @@ public class CompostGameManager : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI scoreUI = null;
 
+    private WorldUiToggleSpawner uitoggle;
+
+    private bool gameOver = false;
+
     private int score = 0;
     private int maxScore = 0;
     
     void Start()
     {
         Instance = this;
+        uitoggle = FindFirstObjectByType<WorldUiToggleSpawner>();
         scoreUI.text = "Score: " + score.ToString();
 
         if (!spawners.Any() || !items.Any())
@@ -37,9 +42,13 @@ public class CompostGameManager : MonoBehaviour
 
     void Update()
     {
-        if (score >= maxScore)
+        if (score >= maxScore & !gameOver)
         {
-            // TODO: mettre le UI de fin de jeu
+
+            uitoggle.Toggle();
+            uitoggle.SetText("Game Over, Score: " + score.ToString());
+            gameOver = true;
+
         }
     }
 
