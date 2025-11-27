@@ -91,7 +91,7 @@ public class GameManager : MonoBehaviour
     {
         if (scoreText != null)
         {
-            scoreText.text =score.ToString();
+            scoreText.text =score.ToString() + remainingTrash.ToString();
         }
     }
 

@@ -112,6 +112,7 @@ GameObject:
   - component: {fileID: 1271322890734670250}
   - component: {fileID: 9082191351225560983}
   - component: {fileID: 9204695157497984316}
+  - component: {fileID: -2174942651579028817}
   m_Layer: 0
   m_Name: Cereal
   m_TagString: Untagged
@@ -275,6 +276,18 @@ MonoBehaviour:
   _rigidbody: {fileID: 1271322890734670250}
   _kinematicWhileSelected: 1
   _throwWhenUnselected: 1
+--- !u!114 &-2174942651579028817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1269223170329064416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8d894792a2f6e43895892304d7de86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TrashItem
 --- !u!1 &2727292595038238708
 GameObject:
   m_ObjectHideFlags: 0

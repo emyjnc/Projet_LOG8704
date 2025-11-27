@@ -23,6 +23,8 @@ public class BinTrigger1 : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other == null) return; 
+
         TrashItem trash = other.GetComponent<TrashItem>();
 
         if (trash == null) return;
@@ -31,12 +33,12 @@ public class BinTrigger1 : MonoBehaviour
         {
             Debug.Log("bien joué ! +1");
             
-            GameManager.Instance.AddScore();
             GameManager.Instance.TrashDisposed();
-            other.gameObject.SetActive(false);
-          
             
-            //Destroy(other.gameObject);
+            GameManager.Instance.AddScore();
+            other.gameObject.SetActive(false);
+
+
             return;
 
         }

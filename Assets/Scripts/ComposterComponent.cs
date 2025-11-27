@@ -8,6 +8,7 @@ public class ComposterComponent : MonoBehaviour
         if (collision.gameObject.TryGetComponent<ItemComponent>(out var item) && item.type == ItemType.Compostable)
         {
             CompostGameManager.Instance.AddToScore();
+           
             Destroy(collision.gameObject);
         }
     }
