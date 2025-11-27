@@ -19,6 +19,7 @@ public class UIManager : MonoBehaviour
     // Individually tracked right-hand interactors
     public GameObject rightTeleport;
     public GameObject rightTurn;
+    public GameObject leftSlide;
 
 
 
@@ -89,6 +90,9 @@ public class UIManager : MonoBehaviour
             else if (name == "ControllerSlideInteractor")
             {
                 slideControllers.Add(obj);
+
+                if (leftSlide == null && IsInLeftHand(obj.transform))
+                    leftSlide = obj;
             }
         }
 
@@ -116,6 +120,17 @@ public class UIManager : MonoBehaviour
         return false;
     }
 
+    private bool IsInLeftHand(Transform t)
+    {
+        while (t != null)
+        {
+            if (t.name.Contains("LeftInteractions"))
+                return true;
+            t = t.parent;
+        }
+        return false;
+    }
+
 
     public void SetOption(int option)
     {
@@ -132,17 +147,14 @@ public class UIManager : MonoBehaviour
         switch (selectedOption)
         {
             case 0:
-                // ✔ Option 0: Only RIGHT teleport active
                 EnableOnlyRightTeleport();
                 break;
 
             case 1:
-                // ✔ Option 1: All locomotion OFF
                 SetAllLocomotion(false);
                 break;
 
             case 2:
-                // ✔ Option 2: Only RIGHT turn active
                 EnableOnlyRightTurn();
                 break;
         }
@@ -164,6 +176,8 @@ public class UIManager : MonoBehaviour
 
         if (rightTurn != null)
             rightTurn.SetActive(true);
+        if (leftSlide != null)
+            leftSlide.SetActive(true);
 
         Debug.Log("Locomotion: RIGHT TURN ENABLED");
     }
