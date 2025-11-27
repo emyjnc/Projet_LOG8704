@@ -7,12 +7,10 @@ public class TrashItem : MonoBehaviour
     private Vector3 initPosition;
     private Quaternion initRotation;
     private bool hasStartedTimer = false;
-    private Grabbable grabbable;
+    
     private void Awake()
     {
-        {
-            grabbable = GetComponent<Grabbable>();
-        }
+        
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
