@@ -23,7 +23,7 @@ public class TrashItem : MonoBehaviour
             GameManager.Instance.RegisterTrash();
 
         }
-
+        
     }
 
     // Update is called once per frame
