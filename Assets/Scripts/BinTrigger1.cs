@@ -1,7 +1,6 @@
 using Oculus.Haptics;
 using Unity.VisualScripting;
 using UnityEngine;
-using Oculus.Haptics;
 
 public class BinTrigger1 : MonoBehaviour
 {
