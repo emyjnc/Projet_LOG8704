@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
         {
             stopTimer();
             uitoggle.Toggle();
-            uitoggle.SetText("Game Over, Score: " + score.ToString());
+            uitoggle.SetText("Good job, Score: " + score.ToString());
         }
     }
     public void startTimer()
@@ -95,7 +95,7 @@ public class GameManager : MonoBehaviour
     {
         if (scoreText != null)
         {
-            scoreText.text =score.ToString() + remainingTrash.ToString();
+            scoreText.text =score.ToString();
         }
     }
 
