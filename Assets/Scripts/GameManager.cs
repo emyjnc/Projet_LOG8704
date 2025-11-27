@@ -13,13 +13,15 @@ public class GameManager : MonoBehaviour
     private bool timerRunning = false;
     public int remainingTrash = 0;
 
+    private WorldUiToggleSpawner uitoggle;
+
     private void Awake()
     {
         Instance = this;
     }
     void Start()
     {
-        
+        uitoggle = FindFirstObjectByType<WorldUiToggleSpawner>();
     }
 
     // Update is called once per frame
@@ -40,9 +42,11 @@ public class GameManager : MonoBehaviour
     public void TrashDisposed()
     {
         remainingTrash--;
-        if(remainingTrash <= 0)
+        if(remainingTrash <= 0 & timerRunning)
         {
             stopTimer();
+            uitoggle.Toggle();
+            uitoggle.SetText("Game Over, Score: " + score.ToString());
         }
     }
     public void startTimer()

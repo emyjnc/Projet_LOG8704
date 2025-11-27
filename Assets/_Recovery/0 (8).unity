@@ -467,7 +467,6 @@ MonoBehaviour:
   faceUser: 1
   respawnDistance: 2
   closeByHiding: 1
-  minigameText: {fileID: 0}
 --- !u!114 &46857840
 MonoBehaviour:
   m_ObjectHideFlags: 0
