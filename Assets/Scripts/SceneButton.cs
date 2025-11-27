@@ -44,10 +44,6 @@ public class SceneButton : MonoBehaviour
         {
             button.interactable = !isCurrentScene;
 
-            if (isCurrentScene)
-                button.GetComponent<Image>().color = new Color(0.6f, 0.6f, 0.6f);
-            else
-                button.GetComponent<Image>().color = Color.white;
 
             if (label != null)
                 label.text = targetScene;
@@ -63,7 +59,6 @@ public class SceneButton : MonoBehaviour
                 label.text = "Restart";
 
             button.interactable = true;
-            button.GetComponent<Image>().color = Color.white;
         }
         else
         {
@@ -72,7 +67,6 @@ public class SceneButton : MonoBehaviour
                 label.text = targetScene;
 
             button.interactable = true;
-            button.GetComponent<Image>().color = Color.white;
         }
     }
 
